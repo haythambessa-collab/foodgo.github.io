@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chocolate house - FOOD GO</title>
+  <link rel="stylesheet" href="style2.css">
+  <script defer src="cart2.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="foodgo.png" alt="Food Go">
+    <span><strong>FOOD GO</strong><small>FAST & RELIABLE DELIVERY</small></span>
+  </a>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <button class="cart-button" type="button" onclick="openCart()">🛒 السلة <b id="cartCount">0</b></button>
+  </nav>
+</header>
+
+<main class="menu-page">
+  <section class="menu-header">
+   <img src="logos/chocolate-house.png" alt="لوجو مطعم شيكولات هاوس">
+    <p><h3>أختار من الاصناف وضيفها للاوردر بتاعك </h3></p>
+      
+    </p>
+  </section>
+
+  <section class="menu-section">
+    
+    <div class="menu-grid">
+    </div>
+  </section>
+</main>
+
+<!-- سلة المشتريات -->
+<div id="cartDrawer" class="cart-drawer" aria-hidden="true">
+  <div class="cart-panel">
+    <div class="cart-head">
+      <h2>🛒 سلة المشتريات <span class="cart-title-badge" id="cartCount">0</span></h2>
+      <button type="button" onclick="closeCart()">✕</button>
+    </div>
+    <div id="cartItems"></div>
+
+    <div class="checkout-form">
+      <h3>بيانات العميل والتوصيل</h3>
+      <input id="customerName" type="text" placeholder="الاسم بالكامل">
+      <input id="customerPhone" type="tel" placeholder="رقم التليفون">
+      <select id="checkoutZone">
+        <option value="">اختار منطقة التوصيل</option>
+        <option value="شبرا">شبرا — 20 ج.م</option>
+<option value="الخلفاوى">ابو الفرج — 25 ج.م</option>
+        <option value="الخلفاوى">روض الفرج — 25 ج.م</option>
+        <option value="الخلفاوى">مسره — 30 ج.م</option>
+        <option value="الخلفاوى">ارض ايوب — 30 ج.م</option>
+        <option value="الخلفاوى">احمد حلمى من ابو وافيه الى عايده  — 25 ج.م</option>
+        <option value="الخلفاوى">من خلوصى الى فكتوريا  — 25 ج.م</option>
+        <option value="الخلفاوى">فكتوريا / الشيخ رمضان  — 25 ج.م</option>
+        <option value="الخلفاوى">عبد الحميد الديب  — 25 ج.م</option>
+        <option value="الخلفاوى">المتنزه — 20 ج.م</option>
+        <option value="الخلفاوى">المنيه — 20 ج.م</option>
+        <option value="الخلفاوى">سانت تريزا  — 20 ج.م</option>
+        <option value="الخلفاوى">الجسر من الخلفاوى الى راتب  — 20 ج.م</option>
+        <option value="الخلفاوى">الشيشينى — 20 ج.م</option>
+        <option value="الخلفاوى">الباحثه — 20 ج.م</option>
+        <option value="الخلفاوى">الجسر من راتب الى  المبيضه   — 20 ج.م</option>
+        <option value="الخلفاوى">مدينه النور  — 45 ج.م</option>
+        <option value="الخلفاوى"> الشرابيه  — 45 ج.م</option>
+        <option value="الخلفاوى">الزاويه — 45 ج.م</option>
+        <option value="الخلفاوى">المستعمره — 50 ج.م</option>
+        <option value="الخلفاوى">المطريه / الزيتون  — 80 ج.م</option>
+         <option value="الخلفاوى">السواح — 70 ج.م</option>
+          <option value="الخلفاوى">الاميريه — 70 ج.م</option>
+           <option value="الخلفاوى">شبرا البلد  — 40 ج.م</option>
+            <option value="الخلفاوى">كليه الزراعه  — 40 ج.م</option>
+             <option value="الخلفاوى">الوراق  — 60 ج.م</option>
+              <option value="الخلفاوى">امبابه — 60 ج.م</option>
+               <option value="الخلفاوى">العجوزه — 60 ج.م</option>
+                <option value="الخلفاوى">المهندسين — 60 ج.م</option>
+                 <option value="الخلفاوى">الدقى — 70 ج.م</option>
+                 <option value="الخلفاوى">مدينه نصر لحد الطيران  — 100 ج.م</option>
+                 <option value="الخلفاوى">مدينه نصر بعد الطيران  — 120 ج.م</option>
+      </select>
+      <textarea id="customerAddress" rows="3" placeholder="العنوان بالتفصيل"></textarea>
+    </div>
+
+    <div class="totals">
+      <div><span>إجمالي الطلب</span><b id="checkoutSubtotal">0 ج.م</b></div>
+      <div><span>خدمة التوصيل</span><b id="checkoutDelivery">0 ج.م</b></div>
+      <div class="grand"><span>الإجمالي النهائي</span><b id="checkoutTotal">0 ج.م</b></div>
+    </div>
+
+    <div class="cart-actions">
+      <button class="secondary-btn" type="button" onclick="clearCart()">تفريغ السلة</button>
+      <button class="primary-btn" type="button" onclick="submitOrder()">إرسال الأوردر واتساب</button>
+    </div>
+  </div>
+</div>
+<footer>
+  <section class="menu-section">
+    <h2>طواجن نوتيلا </h2>
+    <div class="menu-grid">
+      <article class="menu-card"><h3>طاجن نوتيلا بالايس كريم </h3><small></small><footer><b>95 ج.م</b><button onclick="addItem('طاجن نوتيلا بالايس كريم',95)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>طاجن نوتيلا بالمارشماليو </h3><small></small><footer><b>95 ج.م</b><button onclick="addItem('طاجن نوتيلا بالمارشماليو',95)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>طاجن لوتس </h3><small></small><footer><b>105 ج.م</b><button onclick="addItem('طاجن لوتس',105)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>طاجن وايت </h3><small></small><footer><b>105 ج.م</b><button onclick="addItem('طاجن وايت',105)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>طاجن نص و نص </h3><small></small><footer><b>105 ج.م</b><button onclick="addItem('طاجن نص و نص',105)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>طاجن ميكس </h3><small></small><footer><b>105 ج.م</b><button onclick="addItem('طاجن ميكس',105)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>طاجن ريد فيلفيت بالوايت شوكليت</h3><small></small><footer><b>105 ج.م</b><button onclick="addItem('طاجن ريد فيلفيت بالوايت شوكليت',105)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>طاجن باستشيو</h3><small></small><footer><b>134 ج.م</b><button onclick="addItem('طاجن باستشيو',134)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>طاجن نوتيلا صغير </h3><small></small><footer><b>56 ج.م</b><button onclick="addItem('طاجن نوتيلا صغير',56)">إضافة للسلة</button></footer></article>
+    </div>
+  </section> 
+
+  <section class="menu-section">
+    <h2>وافل</h2>
+    <div class="menu-grid">
+     <article class="menu-card"><h3>وافل نوتيلا </h3><small></small><footer><b>90 ج.م</b><button onclick="addItem('وافل نوتيلا',90)">إضافة للسلة</button></footer></article>
+           <article class="menu-card"><h3>وافل عسل </h3><small></small><footer><b>90 ج.م</b><button onclick="addItem('وافل عسل',90)">إضافة للسلة</button></footer></article>      <article class="menu-card"><h3>طاجن نوتيلا صغير </h3><small></small><footer><b>56 ج.م</b><button onclick="addItem('طاجن نوتيلا صغير',56)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>وافل مربى </h3><small></small><footer><b>90 ج.م</b><button onclick="addItem('وافل مربى',90)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>وافل شوكليت دارك</h3><small></small><footer><b>90 ج.م</b><button onclick="addItem('وافل شوكليت دارك',90)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>وافل شوكليت بيضاء</h3><small></small><footer><b>101 ج.م</b><button onclick="addItem('وافل شوكليت بيضاء',101)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>وافل كراميل </h3><small></small><footer><b>101 ج.م</b><button onclick="addItem('وافل كراميل',101)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>وافل لوتس</h3><small></small><footer><b>101 ج.م</b><button onclick="addItem('وافل لوتس',101)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>وافل 4 سيزون </h3><small></small><footer><b>101 ج.م</b><button onclick="addItem('وافل 4 سيزون',101)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>وافل نص و نص </h3><small></small><footer><b>101 ج.م</b><button onclick="addItem('وافل نص و نص',101)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>وافل باستشيو</h3><small></small><footer><b>134 ج.م</b><button onclick="addItem('وافل باستشيو',134)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>بان كيك</h3><small></small><footer><b>123 ج.م</b><button onclick="addItem('بان كيك',123)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>بان كيك لوتس </h3><small></small><footer><b>123 ج.م</b><button onclick="addItem('بان كيك لوتس',123)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>مولتين كيك بالايس كريم </h3><small></small><footer><b>112 ج.م</b><button onclick="addItem('مولتين كيك بالايس كريم',112)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>مولتن كيك لوتس بالايس كريم</h3><small></small><footer><b>123 ج.م</b><button onclick="addItem('مولتن كيك لوتس بالايس كريم',123)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>مولتن لافا بالايس كريم</h3><small></small><footer><b>134 ج.م</b><button onclick="addItem('مولتن لافا بالايس كريم',134)">إضافة للسلة</button></footer></article>
+
+
+    </div>
+  </section>
+
+  <section class="menu-section">
+    <h2>متنوع</h2>
+    <div class="menu-grid">
+     <article class="menu-card"><h3>ديسباسيتو نوتيلا</h3><small></small><footer><b>85 ج.م</b><button onclick="addItem('ديسباسيتو نوتيلا',85)">إضافة للسلة</button></footer></article>
+           <article class="menu-card"><h3>ديسباسيتو لوتس </h3><small></small><footer><b>95 ج.م</b><button onclick="addItem('ديسباسيتو لوتس',95)">إضافة للسلة</button></footer></article>      <article class="menu-card"><h3>طاجن نوتيلا صغير </h3><small></small><footer><b>56 ج.م</b><button onclick="addItem('طاجن نوتيلا صغير',56)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>ديسباسيتو لوتس </h3><small></small><footer><b>95 ج.م</b><button onclick="addItem('ديسباسيتو لوتس',95)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>قطعه شوكليت فادج </h3><small></small><footer><b>55 ج.م</b><button onclick="addItem('قطعه شوكليت فadg',55)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>فلوتس كيك</h3><small></small><footer><b>55 ج.م</b><button onclick="addItem('فلوتس كيك',55)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>ريد فيلفيت </h3><small></small><footer><b>55 ج.م</b><button onclick="addItem('ريد فيلفيت',55)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>وافل لوتس</h3><small></small><footer><b>101 ج.م</b><button onclick="addItem('وافل لوتس',101)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>ريد فيلفيت </h3><small></small><footer><b>101 ج.م</b><button onclick="addItem('ريد فيلفيت',101)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>بسكوت سابليه </h3><small></small><footer><b>50 ج.م</b><button onclick="addItem('بسكوت سابليه',50)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>كوره شيكولاته</h3><small></small><footer><b>45 ج.م</b><button onclick="addItem('كوره شيكولاته',45)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>قطعه تشيز كيك</h3><small></small><footer><b>101 ج.م</b><button onclick="addItem('قطعه تشيز كيك',101)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>جار تشيز كيك</h3><small></small><footer><b>101 ج.م</b><button onclick="addItem('جار تشيز كيك',101)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>كب مينى ترافل </h3><small></small><footer><b>50 ج.م</b><button onclick="addItem('كب مينى ترافل',50)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>كب ترافل </h3><small></small><footer><b>67 ج.م</b><button onclick="addItem('كب ترافل',67)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>سينابون </h3><small></small><footer><b>101 ج.م</b><button onclick="addItem('سينابون',101)">إضافة للسلة</button></footer></article>
+<article class="menu-card"><h3>سوبر فته سينابون </h3><small></small><footer><b>123 ج.م</b><button onclick="addItem('سوبر فته سينابون',123)">إضافة للسلة</button></footer></article>
+<article class="menu-card"><h3>كنافه مانجو </h3><small></small><footer><b>45 ج.م</b><button onclick="addItem('كنافه مانجو',45)">إضافة للسلة</button></footer></article>
+  </section>
+</main>
+
+<footer>© FOOD GO - Fast & Reliable Delivery</footer>
+
+<button class="floating-cart" type="button" onclick="openCart()">
+  🛒 <span>السلة</span> <b id="cartCountFloating">0</b>
+</button>
+
+</body>
+</html>

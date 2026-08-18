@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منيو الشيف عزيز الذكي</title>
+    <link rel="stylesheet" href="stylecheffaziz.css">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <div class="menu-container">
+        <header class="menu-header">
+            <div class="logo-wrapper">
+                <img src="logos/chef-aziz.png" alt="شيف عزيز" class="restaurant-logo">
+            </div>
+            <h1 class="restaurant-name">الشيف عزيز</h1>
+            <p class="restaurant-subtitle">مشويات • طواجن • فاست فود</p>
+             <a href="index.html" class="nav-item active" id="main-home-link" onclick="closeAllModals()">
+        <i class="fas fa-utensils"></i>
+        <span>الرئيسية</span>
+    </a>
+    
+            <nav>
+    
+  </nav>
+        </header>
+
+        <div class="menu-section">
+            <div class="menu-item">
+                <div class="item-info"><span class="item-title">كيلو بانيه فريش مع السلطات</span></div>
+                <div class="item-actions">
+                    <button onclick="addToCart('كيلو بانيه فريش', 380, 'صغير')" class="add-btn">صغير (380ج)</button>
+                    <button onclick="addToCart('كيلو bانيه فريش', 423, 'كبير')" class="add-btn btn-large">كبير (423ج)</button>
+                </div>
+            
+            <div class="menu-item">
+                <div class="item-info"><span class="item-title">فرخه مشويه مع السلطات </span></div>
+                <div class="item-actions">
+                    <button onclick="addToCart('كيلو بانيه فريش', 300, 'صغير')" class="add-btn">صغير (300ج)</button>
+                    <button onclick="addToCart('كيلو bانيه فريش', 334, 'كبير')" class="add-btn btn-large">كبير (334ج)</button>
+                </div>
+            </div><div class="menu-item">
+                <div class="item-info"><span class="item-title">كيلو طرب مع السلطات</span></div>
+                <div class="item-actions">
+                    <button onclick="addToCart('كيلو بانيه فريش', 430, 'صغير')" class="add-btn">صغير (430ج)</button>
+                    <button onclick="addToCart('كيلو bانيه فريش', 479, 'كبير')" class="add-btn btn-large">كبير (479ج)</button>
+                </div>
+            </div><div class="menu-item">
+                <div class="item-info"><span class="item-title">كيلو كفته كندوز مع السلطات</span></div>
+                <div class="item-actions">
+                    <button onclick="addToCart('كيلو بانيه فريش', 350, 'صغير')" class="add-btn">صغير (350ج)</button>
+                    <button onclick="addToCart('كيلو bانيه فريش', 390, 'كبير')" class="add-btn btn-large">كبير (390ج)</button>
+                </div>
+            </div>
+        <div class="menu-item">
+                <div class="item-info"><span class="item-title">نص فرخه مندى </span></div>
+                <div class="item-actions">
+                    <button onclick="addToCart('كيلو بانيه فريش', 150, 'صغير')" class="add-btn">صغير (150ج)</button>
+                    <button onclick="addToCart('كيلو bانيه فريش', 167, 'كبير')" class="add-btn btn-large">كبير (167ج)</button>
+                </div>
+            </div>
+        <div class="menu-item">
+                <div class="item-info"><span class="item-title">رغيف حواوشى + بطاطس</span></div>
+                <div class="item-actions">
+                    <button onclick="addToCart('كيلو بانيه فريش', 50, 'صغير')" class="add-btn">صغير (50ج)</button>
+                    <button onclick="addToCart('كيلو bانيه فريش', 56, 'كبير')" class="add-btn btn-large">كبير (56ج)</button>
+                </div>
+            </div>
+        <div class="menu-item">
+                <div class="item-info"><span class="item-title">حواوشى موتزاريلا + بطاطس</span></div>
+                <div class="item-actions">
+                    <button onclick="addToCart('كيلو بانيه فريش', 70, 'صغير')" class="add-btn">صغير (70ج)</button>
+                    <button onclick="addToCart('كيلو bانيه فريش', 78, 'كبير')" class="add-btn btn-large">كبير (78ج)</button>
+                </div>
+            </div>
+        <div class="menu-item">
+                <div class="item-info"><span class="item-title">رغيف بلدى بطاطس مع كبده </span></div>
+                <div class="item-actions">
+                    <button onclick="addToCart('كيلو بانيه فريش', 20, 'صغير')" class="add-btn">صغير (20ج)</button>
+                    <button onclick="addToCart('كيلو bانيه فريش', 23, 'كبير')" class="add-btn btn-large">كبير (23ج)</button>
+                </div>
+            </div>
+        <div class="menu-item">
+                <div class="item-info"><span class="item-title">رغيف بلدى بطاطس مع سجق  </span></div>
+                <div class="item-actions">
+                    <button onclick="addToCart('كيلو بانيه فريش', 20, 'صغير')" class="add-btn">صغير (20ج)</button>
+                    <button onclick="addToCart('كيلو bانيه فريش', 23, 'كبير')" class="add-btn btn-large">كبير (23ج)</button>
+                </div>
+            </div>
+        <div class="menu-item">
+                <div class="item-info"><span class="item-title">رغيف بلدى بطاطس مع كبد وقوانص  </span></div>
+                <div class="item-actions">
+                    <button onclick="addToCart('كيلو بانيه فريش', 20, 'صغير')" class="add-btn">صغير (20ج)</button>
+                    <button onclick="addToCart('كيلو bانيه فريش', 23, 'كبير')" class="add-btn btn-large">كبير (23ج)</button>
+                </div>
+            </div>
+        <div class="menu-item">
+                <div class="item-info"><span class="item-title">رغيف فينو كبده أو سجق أو كبد و قوانص</span></div>
+                <div class="item-actions">
+                    <button onclick="addToCart('كيلو بانيه فريش', 15, 'صغير')" class="add-btn">صغير (15ج)</button>
+                    <button onclick="addToCart('كيلو bانيه فريش', 17, 'كبير')" class="add-btn btn-large">كبير (17ج)</button>
+                </div>
+            </div>
+        <div class="menu-item">
+                <div class="item-info"><span class="item-title">ساندوتش بطاطس سورى </span></div>
+                <div class="item-actions">
+                    <button onclick="addToCart('كيلو بانيه فريش', 30, 'صغير')" class="add-btn">صغير (30ج)</button>
+                    <button onclick="addToCart('كيلو bانيه فريش', 34, 'كبير')" class="add-btn btn-large">كبير (34ج)</button>
+                </div>
+            </div>
+        <div class="menu-item">
+                <div class="item-info"><span class="item-title">ساندوتش كفته سورى</span></div>
+                <div class="item-actions">
+                    <button onclick="addToCart('كيلو بانيه فريش', 40, 'صغير')" class="add-btn">صغير (40ج)</button>
+                    <button onclick="addToCart('كيلو bانيه فريش', 45, 'كبير')" class="add-btn btn-large">كبير (45ج)</button>
+                </div>
+            </div>
+        <div class="menu-item">
+                <div class="item-info"><span class="item-title">ساندوتش فرنساوى كبير بانيه </span></div>
+                <div class="item-actions">
+                    <button onclick="addToCart('كيلو بانيه فريش', 70, 'صغير')" class="add-btn">صغير (70ج)</button>
+                    <button onclick="addToCart('كيلو bانيه فريش', 78, 'كبير')" class="add-btn btn-large">كبير (78ج)</button>
+                </div>
+            </div>
+        <div class="menu-item">
+                <div class="item-info"><span class="item-title">مكرونه بالكبده او سجق او كبد و قوانص </span></div>
+                <div class="item-actions">
+                    <button onclick="addToCart('كيلو بانيه فريش', 50, 'صغير')" class="add-btn">صغير (50ج)</button>
+                    <button onclick="addToCart('كيلو bانيه فريش', 56, 'كبير')" class="add-btn btn-large">كبير (56ج)</button>
+                </div>
+            </div>
+        <div class="menu-item">
+                <div class="item-info"><span class="item-title">مكرونه بالكبده او سجق او كبد و قوانص </span></div>
+                <div class="item-actions">
+                    <button onclick="addToCart('كيلو بانيه فريش', 95, 'صغير')" class="add-btn">صغير (95ج)</button>
+                    <button onclick="addToCart('كيلو bانيه فريش', 106, 'كبير')" class="add-btn btn-large">كبير (106ج)</button>
+                </div>
+            </div>
+        <div class="menu-item">
+                <div class="item-info"><span class="item-title">صاروخ كفته </span></div>
+                <div class="item-actions">
+                    <button onclick="addToCart('كيلو بانيه فريش', 40, 'صغير')" class="add-btn">صغير (40ج)</button>
+                    <button onclick="addToCart('كيلو bانيه فريش', 45, 'كبير')" class="add-btn btn-large">كبير (45ج)</button>
+                </div>
+            </div>
+        <div class="menu-item">
+                <div class="item-info"><span class="item-title">ساندواش برجر</span></div>
+                <div class="item-actions">
+                    <button onclick="addToCart('كيلو بانيه فريش', 75, 'صغير')" class="add-btn">صغير (75ج)</button>
+                    <button onclick="addToCart('كيلو bانيه فريش', 84, 'كبير')" class="add-btn btn-large">كبير (84ج)</button>
+                </div>
+            </div>
+        </div>
+            <div class="menu-item">
+                <div class="item-info"><span class="item-title">ساندوتش زنجر </span></div>
+                <div class="item-actions">
+                    <button onclick="addToCart('فرخه مشويه', 65, 'صغير')" class="add-btn">صغير (65ج)</button>
+                    <button onclick="addToCart('فرخه مشويه', 73, 'كبير')" class="add-btn btn-large">كبير (73ج)</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-info"><span class="item-title">ساندوتش استربس</span></div>
+                <div class="item-actions">
+                    <button onclick="addToCart('كيلو طرب', 65, 'صغير')" class="add-btn">صغير (65ج)</button>
+                    <button onclick="addToCart('كيلو طرب', 73, 'كبير')" class="add-btn btn-large">كبير (73ج)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- النافذة المنبثقة المحدثة بالكامل -->
+    <div id="cartModal" class="cart-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="toggleCart()">&times;</span>
+            <h2><i class="fas fa-shopping-basket"></i> مراجعة طلبك</h2>
+            
+            <div id="cartItemsList">
+                <p class="empty-msg">السلة فارغة حالياً</p>
+            </div>
+
+            <div class="customer-form" id="customerForm" style="display:none;">
+                <h3><i class="fas fa-user-edit"></i> بيانات التوصيل</h3>
+                <input type="text" id="custName" placeholder="الاسم بالكامل" required>
+                <input type="tel" id="custPhone" placeholder="رقم التليفون" required>
+                <input type="text" id="custAddress" placeholder="العنوان بالتفصيل" required>
+                
+                <label for="custRegion">اختر منطقة التوصيل:</label>
+                <select id="custRegion" onchange="updateCartUI()">
+                    <option value="shubra" data-delivery="25">شبرا (25 ج.م توصيل)</option>
+                    <option value="shubra_elkheima" data-delivery="30">شبرا الخيمة (30 ج.م توصيل)</option>
+                </select>
+            </div>
+
+            <div class="coupon-section">
+                <input type="text" id="couponCode" placeholder="كود الخصم (مثال: CHEF20)">
+                <button onclick="applyCoupon()" class="apply-coupon-btn">تفعيل</button>
+                <div id="couponMsg"></div>
+            </div>
+
+            <div class="cart-summary">
+                <div class="summary-line">حساب الوجبات الأصلي: <span><span id="itemsSubtotal">0</span> ج.م</span></div>
+                <div class="summary-line">قيمة الخصم المستفاد: <span style="color:#ff595e;">- <span id="discountAmount">0</span> ج.م</span></div>
+                <div class="summary-line">خدمة توصيل المنطقة: <span>+ <span id="deliveryCost">0</span> ج.م</span></div>
+                <hr>
+                <h3>الإجمالي الكلي الفعلي: <span id="cartTotal">0</span> ج.م</h3>
+                <button onclick="sendToWhatsApp()" class="checkout-btn"><i class="fab fa-whatsapp"></i> إرسال الطلب الآن</button>
+            </div>
+        </div>
+    </div><nav class="bottom-nav">
+    <!-- تم تصحيح التداخل وإضافة الـ id لرابط الرئيسية فقط -->
+    <a href="index.html" class="nav-item active" id="main-home-link" onclick="closeAllModals()">
+        <i class="fas fa-utensils"></i>
+        <span>الرئيسية</span>
+    </a>
+    
+    <a href="#" class="nav-item" onclick="toggleCart()">
+        <i class="fas fa-shopping-basket"></i>
+        <span class="badge" id="cartCount">0</span>
+        <span>السلة</span>
+    </a>
+    
+    <a href="#" class="nav-item" onclick="alert('صفحة الحساب قيد التطوير')">
+        <i class="fas fa-user"></i>
+        <span>الحساب</span>
+    </a>
+</nav>
+
+    </nav>
+
+    <script src="script1.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مطعم الحراق - FOOD GO</title>
+  <link rel="stylesheet" href="style1.css">
+  <script defer src="cart.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="foodgo.png" alt="Food Go">
+    <span><strong>FOOD GO</strong><small>FAST & RELIABLE DELIVERY</small></span>
+  </a>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <button class="cart-button" type="button" onclick="openCart()">🛒 السلة <b id="cartCount">0</b></button>
+  </nav>
+</header>
+
+<main class="menu-page">
+  <section class="menu-header">
+   <img src="logos/alharraq1.jpg" alt="لوجو مطعم الحراق">
+    <p><h3>أختار من الاصناف وضيفها للاوردر بتاعك </h3></p>
+      
+    </p>
+  </section>
+
+  <section class="menu-section">
+    <h2>ساندوتش فينو 🥖</h2>
+    <div class="menu-grid">
+      <article class="menu-card"><h3>بطاطس</h3><small>فينو</small>
+<!-- سلة المشتريات -->
+<div id="cartDrawer" class="cart-drawer" aria-hidden="true">
+  <div class="cart-panel">
+    <div class="cart-head">
+      <h2>🛒 سلة المشتريات <span class="cart-title-badge" id="cartCount">0</span></h2>
+      <button type="button" onclick="closeCart()">✕</button>
+    </div>
+    <div id="cartItems"></div>
+
+    <div class="checkout-form">
+      <h3>بيانات العميل والتوصيل</h3>
+      <input id="customerName" type="text" placeholder="الاسم بالكامل">
+      <input id="customerPhone" type="tel" placeholder="رقم التليفون">
+      <select id="checkoutZone">
+        <option value="">اختار منطقة التوصيل</option>
+        <option value="شبرا">شبرا — 20 ج.م</option>
+<option value="الخلفاوى">ابو الفرج — 25 ج.م</option>
+        <option value="الخلفاوى">روض الفرج — 25 ج.م</option>
+        <option value="الخلفاوى">مسره — 30 ج.م</option>
+        <option value="الخلفاوى">ارض ايوب — 30 ج.م</option>
+        <option value="الخلفاوى">احمد حلمى من ابو وافيه الى عايده  — 25 ج.م</option>
+        <option value="الخلفاوى">من خلوصى الى فكتوريا  — 25 ج.م</option>
+        <option value="الخلفاوى">فكتوريا / الشيخ رمضان  — 25 ج.م</option>
+        <option value="الخلفاوى">عبد الحميد الديب  — 25 ج.م</option>
+        <option value="الخلفاوى">المتنزه — 20 ج.م</option>
+        <option value="الخلفاوى">المنيه — 20 ج.م</option>
+        <option value="الخلفاوى">سانت تريزا  — 20 ج.م</option>
+        <option value="الخلفاوى">الجسر من الخلفاوى الى راتب  — 20 ج.م</option>
+        <option value="الخلفاوى">الشيشينى — 20 ج.م</option>
+        <option value="الخلفاوى">الباحثه — 20 ج.م</option>
+        <option value="الخلفاوى">الجسر من راتب الى  المبيضه   — 20 ج.م</option>
+        <option value="الخلفاوى">مدينه النور  — 45 ج.م</option>
+        <option value="الخلفاوى"> الشرابيه  — 45 ج.م</option>
+        <option value="الخلفاوى">الزاويه — 45 ج.م</option>
+        <option value="الخلفاوى">المستعمره — 50 ج.م</option>
+        <option value="الخلفاوى">المطريه / الزيتون  — 80 ج.م</option>
+         <option value="الخلفاوى">السواح — 70 ج.م</option>
+          <option value="الخلفاوى">الاميريه — 70 ج.م</option>
+           <option value="الخلفاوى">شبرا البلد  — 40 ج.م</option>
+            <option value="الخلفاوى">كليه الزراعه  — 40 ج.م</option>
+             <option value="الخلفاوى">الوراق  — 60 ج.م</option>
+              <option value="الخلفاوى">امبابه — 60 ج.م</option>
+               <option value="الخلفاوى">العجوزه — 60 ج.م</option>
+                <option value="الخلفاوى">المهندسين — 60 ج.م</option>
+                 <option value="الخلفاوى">الدقى — 70 ج.م</option>
+                 <option value="الخلفاوى">مدينه نصر لحد الطيران  — 100 ج.م</option>
+                 <option value="الخلفاوى">مدينه نصر بعد الطيران  — 120 ج.م</option>
+      </select>
+      <textarea id="customerAddress" rows="3" placeholder="العنوان بالتفصيل"></textarea>
+    </div>
+
+    <div class="totals">
+      <div><span>إجمالي الطلب</span><b id="checkoutSubtotal">0 ج.م</b></div>
+      <div><span>خدمة التوصيل</span><b id="checkoutDelivery">0 ج.م</b></div>
+      <div class="grand"><span>الإجمالي النهائي</span><b id="checkoutTotal">0 ج.م</b></div>
+    </div>
+
+    <div class="cart-actions">
+      <button class="secondary-btn" type="button" onclick="clearCart()">تفريغ السلة</button>
+      <button class="primary-btn" type="button" onclick="submitOrder()">إرسال الأوردر واتساب</button>
+    </div>
+  </div>
+</div>
+<footer><b>17 ج.م</b><button onclick="addItem('بطاطس - فينو',17)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>كبده</h3><small>فينو</small><footer><b>17 ج.م</b><button onclick="addItem('كبده - فينو',17)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>سجق</h3><small>فينو</small><footer><b>17 ج.م</b><button onclick="addItem('سجق - فينو',17)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>بانيه</h3><small>فينو</small><footer><b>17 ج.م</b><button onclick="addItem('بانيه - فينو',17)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>مكسيكانو</h3><small>فينو</small><footer><b>17 ج.م</b><button onclick="addItem('مكسيكانو - فينو',17)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>زنجر تيستى</h3><small>فينو</small><footer><b>28 ج.م</b><button onclick="addItem('زنجر تيستى - فينو',28)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>زنجر شيدر</h3><small>فينو</small><footer><b>28 ج.م</b><button onclick="addItem('زنجر شيدر - فينو',28)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>كفته مشويه</h3><small>فينو</small><footer><b>39 ج.م</b><button onclick="addItem('كفته مشويه - فينو',39)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>شاورما لحم</h3><small>فينو</small><footer><b>45 ج.م</b><button onclick="addItem('شاورما لحم - فينو',45)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>شاورما دجاج</h3><small>فينو</small><footer><b>45 ج.م</b><button onclick="addItem('شاورما دجاج - فينو',45)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>كوردن بلو</h3><small>فينو</small><footer><b>56 ج.م</b><button onclick="addItem('كوردن بلو - فينو',56)">إضافة للسلة</button></footer></article>
+    </div>
+  </section>
+
+  <section class="menu-section">
+    <h2>ساندوتش فرنساوى 🥖🥖</h2>
+    <div class="menu-grid">
+      <article class="menu-card"><h3>بطاطس</h3><small>فرنساوي</small><footer><b>39 ج.م</b><button onclick="addItem('بطاطس - فرنساوي',39)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>كبده / سجق / بانيه</h3><small>فرنساوي</small><footer><b>45 ج.م</b><button onclick="addItem('كبده / سجق / بانيه - فرنساوي',45)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>مكسيكانو</h3><small>فرنساوي</small><footer><b>67 ج.م</b><button onclick="addItem('مكسيكانو - فرنساوي',67)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>زنجر تيستى / زنجر شيدر / كفته مشويه</h3><small>فرنساوي</small><footer><b>78 ج.م</b><button onclick="addItem('زنجر تيستى / زنجر شيدر / كفته مشويه - فرنساوي',78)">إضافة للسلة</button></footer></article>
+      <article class="menu-card"><h3>شاورما لحم / شاورما دجاج</h3><small>فرنساوي</small><footer><b>89 ج.م</b><button onclick="addItem('شاورما لحم / شاورما دجاج - فرنساوي',89)">إضافة للسلة</button></footer></article>
+    </div>
+  </section>
+
+  <section class="menu-section">
+    <h2>ساندوتش سورى 🌯</h2>
+    <div class="menu-grid">
+      <article class="menu-card"><h3>بطاطس</h3><small>اختار الحجم</small><div class="size-options">
+        <button type="button" onclick="addItem('بطاطس - سوري صغير',45)">صغير <b>45 ج.م</b></button>
+        <button type="button" onclick="addItem('بطاطس - سوري كبير',67)">كبير <b>67 ج.م</b></button>
+      </div></article>
+      <article class="menu-card"><h3>بطاطس موتزاريلا / شيدر</h3><small>اختار الحجم</small><div class="size-options">
+        <button type="button" onclick="addItem('بطاطس موتزاريلا / شيدر - سوري صغير',51)">صغير <b>51 ج.م</b></button>
+        <button type="button" onclick="addItem('بطاطس موتزاريلا / شيدر - سوري كبير',78)">كبير <b>78 ج.م</b></button>
+      </div></article>
+      <article class="menu-card"><h3>بانيه / كبده / سجق مدخن بطاطس</h3><small>اختار الحجم</small><div class="size-options">
+        <button type="button" onclick="addItem('بانيه / كبده / سجق مدخن بطاطس - سوري صغير',56)">صغير <b>56 ج.م</b></button>
+        <button type="button" onclick="addItem('بانيه / كبده / سجق مدخن بطاطس - سوري كبير',89)">كبير <b>89 ج.م</b></button>
+      </div></article>
+      <article class="menu-card"><h3>كفته بطاطس</h3><small>اختار الحجم</small><div class="size-options">
+        <button type="button" onclick="addItem('كفته بطاطس - سوري صغير',84)">صغير <b>84 ج.م</b></button>
+        <button type="button" onclick="addItem('كفته بطاطس - سوري كبير',112)">كبير <b>112 ج.م</b></button>
+      </div></article>
+      <article class="menu-card"><h3>برجر بطاطس / زنجر تيستى / شيدر</h3><small>اختار الحجم</small><div class="size-options">
+        <button type="button" onclick="addItem('برجر بطاطس / زنجر تيستى / شيدر - سوري صغير',89)">صغير <b>89 ج.م</b></button>
+        <button type="button" onclick="addItem('برجر بطاطس / زنجر تيستى / شيدر - سوري كبير',123)">كبير <b>123 ج.م</b></button>
+      </div></article>
+      <article class="menu-card"><h3>شيش طاووق / فاهيتا فراخ</h3><small>اختار الحجم</small><div class="size-options">
+        <button type="button" onclick="addItem('شيش طاووق / فاهيتا فراخ - سوري صغير',95)">صغير <b>95 ج.م</b></button>
+        <button type="button" onclick="addItem('شيش طاووق / فاهيتا فراخ - سوري كبير',123)">كبير <b>123 ج.م</b></button>
+      </div></article>
+      <article class="menu-card"><h3>شاورما لحمه</h3><small>اختار الحجم</small><div class="size-options">
+        <button type="button" onclick="addItem('شاورما لحمه - سوري صغير',101)">صغير <b>101 ج.م</b></button>
+        <button type="button" onclick="addItem('شاورما لحمه - سوري كبير',123)">كبير <b>123 ج.م</b></button>
+      </div></article>
+      <article class="menu-card"><h3>شاورما فراخ</h3><small>اختار الحجم</small><div class="size-options">
+        <button type="button" onclick="addItem('شاورما فراخ - سوري صغير',95)">صغير <b>95 ج.م</b></button>
+        <button type="button" onclick="addItem('شاورما فراخ - سوري كبير',134)">كبير <b>134 ج.م</b></button>
+      </div></article>
+      <article class="menu-card"><h3>كوردن بلو</h3><small>اختار الحجم</small><div class="size-options">
+        <button type="button" onclick="addItem('كوردن بلو - سوري صغير',101)">صغير <b>101 ج.م</b></button>
+        <button type="button" onclick="addItem('كوردن بلو - سوري كبير',145)">كبير <b>145 ج.م</b></button>
+      </div></article>
+    </div>
+    <p class="note">اختار صغير أو كبير قبل الإضافة للسلة، وكل حجم يُحسب كمنتج مستقل.</p>
+  </section>
+</main>
+
+<footer>© FOOD GO - Fast & Reliable Delivery</footer>
+
+<button class="floating-cart" type="button" onclick="openCart()">
+  🛒 <span>السلة</span> <b id="cartCountFloating">0</b>
+</button>
+
+</body>
+</html>
